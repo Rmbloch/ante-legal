@@ -3,25 +3,458 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ante - Screen Time</title>
-<style>
-  :root { color-scheme: light; }
-  body { max-width: 560px; margin: 0 auto; padding: 80px 24px; font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1a1a; background: #fff; text-align: center; }
-  h1 { font-size: 30px; margin: 0 0 8px; }
-  p { color: #555; }
-  .links { margin-top: 32px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-  .links a { display: inline-block; padding: 12px 22px; border: 1px solid #d8d8d8; border-radius: 10px; text-decoration: none; color: #2f5bd0; font-weight: 600; }
-  footer { margin-top: 56px; color: #999; font-size: 13px; }
-</style>
+<title>Ante — Turn your screen-time limits into a game</title>
+<meta name="description" content="Ante locks the apps you overuse when you hit your daily limit — then lets you wager your remaining minutes in quick games to win time back. Private, on-device, coming soon to iPhone.">
+<link rel="canonical" href="https://anteapp.me/">
+<meta name="theme-color" content="#0A0926">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ante">
+<meta property="og:title" content="Ante — Turn your screen-time limits into a game">
+<meta property="og:description" content="Hit your limit, and the app locks. Win your minutes back at the table. Private, on-device, coming soon to iPhone.">
+<meta property="og:url" content="https://anteapp.me/">
+<meta property="og:image" content="https://anteapp.me/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-  <h1>Ante&nbsp;—&nbsp;Screen Time</h1>
-  <p>Turn your screen-time limits into a game.</p>
-  <div class="links">
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms of Service</a>
-    <a href="mailto:support@anteapp.me">Support</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="stars" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/">
+      <img src="/assets/favicon-64.png" alt="" width="30" height="30">
+      Ante
+    </a>
+    <nav class="nav-links" aria-label="Page sections">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <span class="chip"><span class="dot" aria-hidden="true"></span>Coming Soon</span>
   </div>
-  <footer>© 2026 bearDevs</footer>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Coming soon to iPhone</span>
+        <h1>Turn your screen-time limits <span class="accent">into a game.</span></h1>
+        <p class="sub">Pick the apps that eat your day. Hit your limit, and they lock. <strong>Win your minutes back at the table.</strong></p>
+        <div class="cta-row">
+          <!-- LAUNCH SWAP ▸ When Ante is live on the App Store, delete the <span
+               class="store-badge"> block below and uncomment this link, filling
+               in the real App Store URL. Nothing else needs to change.
+          <a class="store-badge" style="opacity:1;filter:none" href="https://apps.apple.com/app/idXXXXXXXXXX">
+            <svg class="apple" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <span><span class="small">Download on the</span><span class="big">App Store</span></span>
+          </a>
+          -->
+          <span class="store-badge" role="img" aria-label="Coming soon on the App Store">
+            <!-- Apple glyph: Font Awesome Free (CC BY 4.0) -->
+            <svg class="apple" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <span><span class="small">Coming soon on the</span><span class="big">App Store</span></span>
+          </span>
+        </div>
+        <ul class="trust-row">
+          <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Private by design</li>
+          <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>No account, no tracking</li>
+          <li><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>No real money — ever</li>
+        </ul>
+      </div>
+      <div class="hero-device device">
+        <img src="/assets/screens/hub.png" alt="Ante's Hub screen: a wallet of remaining minutes, the day's tracked apps, and the tables where you wager time" width="1179" height="2556" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOOK + DEMO ============ -->
+  <section class="section">
+    <div class="wrap hook-grid">
+      <div class="hook-copy reveal">
+        <span class="eyebrow">Why it works</span>
+        <h2>Gambling, but productive.</h2>
+        <p class="kicker">Other screen-time apps just nag you. Ante makes you earn it back.</p>
+        <p>When an app locks, your remaining minutes become your bankroll. Wager them in a quick game: win, and you buy back screen time. Lose, and the lock simply stays on — the same lock you were already staring at.</p>
+        <p><strong style="color:var(--ink)">You can only win time back or stay locked.</strong> There’s no third outcome, no real downside — just a game standing between you and the scroll.</p>
+      </div>
+      <div class="table-demo card reveal" style="--d:1">
+        <p class="demo-label">Try it — the demo runs right here</p>
+        <div class="demo-status">
+          <div class="stat-box">
+            <div class="num" id="demo-balance">25</div>
+            <div class="lbl">Your minutes</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">
+              <span class="locked-flag">
+                <svg id="demo-lock-closed" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+                <svg id="demo-lock-open" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/></svg>
+                <span id="demo-lock-text">Locked</span>
+              </span>
+            </div>
+            <div class="lbl">Tracked app</div>
+          </div>
+        </div>
+        <div class="coin-stage">
+          <div class="coin" id="demo-coin" aria-hidden="true">
+            <div class="face face-h">A</div>
+            <div class="face face-t">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="demo-actions">
+          <button class="btn" type="button" id="demo-heads">Heads · <span class="wager-amt">10</span> min</button>
+          <button class="btn" type="button" id="demo-tails">Tails · <span class="wager-amt">10</span> min</button>
+          <button class="btn btn--ghost" type="button" id="demo-reset" hidden>Reset demo</button>
+        </div>
+        <p class="demo-result" id="demo-result" aria-live="polite">Call the flip. Win, and the app unlocks with the minutes you won.</p>
+        <p class="demo-fineprint">Played with minutes, never money — same as the app.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Features</span>
+        <h2>A screen-time app you’ll actually open.</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature card reveal">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Per-app daily limits</h3>
+          <p>Pick the apps that eat your day and give each one a daily allowance. You set the stakes.</p>
+        </div>
+        <div class="feature card reveal" style="--d:1">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+          <h3>Locks at zero</h3>
+          <p>When the timer runs out, Ante shields the app using Apple’s Screen Time framework. No willpower required.</p>
+        </div>
+        <div class="feature card reveal" style="--d:2">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16V8m-3.5 3.5L12 8l3.5 3.5"/></svg></div>
+          <h3>Win minutes back</h3>
+          <p>Your remaining minutes are your bankroll. Ante up in a mini-game and earn your screen time back.</p>
+        </div>
+        <div class="feature feature--wide feature--rank card reveal">
+          <div class="rank-copy">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 5v10l-8 5-8-5V7z"/></svg></div>
+            <h3>Climb from Bronze to Diamond</h3>
+            <p>Every minute you ever win counts toward your lifetime rank. The grind is the reward.</p>
+            <div class="rank-row">
+              <span class="rank-badge"><span class="hex hex--bronze"><span>B</span></span>Bronze</span>
+              <span class="rank-badge"><span class="hex hex--silver"><span>S</span></span>Silver</span>
+              <span class="rank-badge"><span class="hex hex--gold"><span>G</span></span>Gold</span>
+              <span class="rank-badge"><span class="hex hex--diamond"><span>D</span></span>Diamond</span>
+            </div>
+          </div>
+          <div class="rank-device device">
+            <img src="/assets/screens/player-card.png" alt="Ante's player card: rank badge, lifetime minutes won, and win streak" width="1179" height="2556" loading="lazy">
+          </div>
+        </div>
+        <div class="feature card reveal" style="--d:1">
+          <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Private by design</h3>
+          <p>No account, no analytics, no servers. Your screen time never leaves your phone.</p>
+        </div>
+        <div class="feature feature--full feature--pro card card--gold reveal">
+          <div class="pro-inner">
+            <div>
+              <h3>Ante Pro</h3>
+              <p>Track up to three apps, unlock every game, and get your full stats. Seven days free.</p>
+            </div>
+            <a class="btn btn--gold" href="#pricing">See pricing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section" id="how">
+    <div class="wrap how-grid">
+      <div>
+        <div class="section-intro reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>Four steps to a fair fight with your phone.</h2>
+        </div>
+        <ol class="steps">
+          <li class="card reveal"><h3>Pick your apps</h3><p>Choose the apps that always swallow your evening.</p></li>
+          <li class="card reveal" style="--d:1"><h3>Set a daily limit</h3><p>Give each one an allowance of minutes. That allowance is your bankroll.</p></li>
+          <li class="card reveal" style="--d:2"><h3>Hit zero, it locks</h3><p>When time runs out, Ante shields the app. The nag becomes a wall.</p></li>
+          <li class="card reveal" style="--d:3"><h3>Ante up to win time back</h3><p>Wager minutes you have left in a quick game. Win, and the app unlocks. Lose, and the lock stays — nothing more to lose.</p></li>
+        </ol>
+      </div>
+      <div class="how-device device reveal">
+        <img src="/assets/screens/dashboard.png" alt="Ante's dashboard: today's usage per tracked app, time remaining, and limits" width="1179" height="2556" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GAMES ============ -->
+  <section class="section" id="games">
+    <div class="wrap games-grid">
+      <div class="games-device device reveal">
+        <img src="/assets/screens/game.png" alt="Ante's Blackjack table: a hand in play with minutes wagered in the pot" width="1179" height="2556" loading="lazy">
+      </div>
+      <div>
+        <div class="section-intro reveal">
+          <span class="eyebrow">The games</span>
+          <h2>Real stakes. Zero dollars.</h2>
+          <p>Every wager is played in minutes of your own screen time. No real money in, none out — ever.</p>
+        </div>
+        <div class="game-cards">
+          <div class="game-card card reveal">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg></div>
+            <div>
+              <h3>Coin Flip <span class="tier-tag">Free</span></h3>
+              <p>Call it in the air. Double your minutes or hand them over — fifty-fifty, five seconds, all in.</p>
+            </div>
+          </div>
+          <div class="game-card game-card--gold card card--gold reveal" style="--d:1">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6" width="10" height="14" rx="2" transform="rotate(-8 8.5 13)"/><rect x="10.5" y="4" width="10" height="14" rx="2" transform="rotate(8 15.5 11)"/></svg></div>
+            <div>
+              <h3>Blackjack <span class="tier-tag tier-tag--gold">Pro</span></h3>
+              <p>Hit, stand, double down. Beat the dealer to 21 and bank the pot in screen time.</p>
+            </div>
+          </div>
+          <p class="games-more reveal" style="--d:2">More games on the way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRIVACY ============ -->
+  <section class="section privacy center" id="privacy">
+    <div class="wrap reveal">
+      <div class="shield" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <span class="eyebrow">Privacy</span>
+      <h2>Your screen time is none of our business.</h2>
+      <p class="section-intro">Ante runs entirely on your iPhone. There is nothing to leak, sell, or subpoena — because nothing ever leaves your device.</p>
+      <ul class="privacy-points">
+        <li class="card">No data collection</li>
+        <li class="card">No servers</li>
+        <li class="card">No analytics</li>
+        <li class="card">No tracking</li>
+        <li class="card">No account</li>
+      </ul>
+      <p class="privacy-note">Apple’s Screen Time framework only ever hands Ante opaque tokens — even your list of tracked apps is unreadable to us. Don’t take our word for it: <a href="/privacy">read the privacy policy</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section center" id="pricing">
+    <div class="wrap">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Start free. Go Pro when you’re ready.</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="plan card reveal">
+          <h3>Free</h3>
+          <p class="plan-sub">Everything you need to call your first flip.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>1 tracked app</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Coin Flip</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Daily limits, locking &amp; wagers</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Private &amp; on-device</li>
+          </ul>
+          <p class="price-line plan-cta"><span class="muted">Free forever.</span></p>
+        </div>
+        <div class="plan plan--pro card card--gold reveal" style="--d:1">
+          <h3><span class="pro-word">Ante Pro</span> <span class="trial-pill">7-day free trial</span></h3>
+          <p class="plan-sub">The full casino, the full picture.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Up to 3 tracked apps</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Every game, including Blackjack</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Full stats &amp; history</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Supports a one-person indie studio</li>
+          </ul>
+          <!-- PRICE ▸ When pricing is final, replace the .price-line below with e.g.:
+          <p class="price-line plan-cta"><strong>$X.99/month</strong> or <strong>$XX.99/year</strong> <span class="muted">· after your 7-day free trial</span></p>
+          -->
+          <p class="price-line plan-cta">Free for 7 days, <span class="muted">then a simple monthly or annual plan. Final pricing at launch.</span></p>
+        </div>
+      </div>
+      <p class="pricing-foot reveal">Subscriptions are handled by Apple and cancel anytime in Settings. Pro never sells minutes — no payment can ever raise your balance.</p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-intro center reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Fair questions.</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="card">
+          <summary>Is this real-money gambling?</summary>
+          <div class="answer"><p>No. The games are simulated and play for your own screen-time minutes. No real money goes in, and nothing of monetary value comes out — minutes can’t be bought, sold, or cashed out.</p></div>
+        </details>
+        <details class="card">
+          <summary>What happens when I lose a wager?</summary>
+          <div class="answer"><p>You lose the minutes you wagered, and the app stays locked — the same lock you already had. You can wager again with what’s left, or wait for your daily limit to reset. Losing never costs you more than staying locked.</p></div>
+        </details>
+        <details class="card">
+          <summary>Can you see my data?</summary>
+          <div class="answer"><p>No. Ante has no servers, no analytics, and no accounts — everything stays on your device, and Apple’s Screen Time framework only ever hands the app opaque tokens. The details are in our <a href="/privacy">privacy policy</a>.</p></div>
+        </details>
+        <details class="card">
+          <summary>Is it iPhone only?</summary>
+          <div class="answer"><p>Yes. Ante is built on Apple’s Screen Time and Family Controls frameworks, so it’s an iPhone app.</p></div>
+        </details>
+        <details class="card">
+          <summary>Why is it rated 17+?</summary>
+          <div class="answer"><p>App Store rules: any app with simulated gambling is rated 17+, even when no real money is involved. Ante’s wagers are only ever your own minutes.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <img src="/assets/favicon-64.png" alt="" width="30" height="30">
+          Ante
+        </a>
+        <p class="tagline">Turn your screen-time limits into a game.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="mailto:support@anteapp.me">Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-meta">
+      <span>© 2026 bearDevs</span>
+      <span>Made in California</span>
+      <span>Rated 17+</span>
+      <span>Simulated gambling — no real money</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var doc = document.documentElement;
+  doc.classList.add("js");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Scroll reveals ---- */
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  } else {
+    doc.classList.remove("js");
+  }
+
+  /* ---- Coin-flip demo ---- */
+  var coin = document.getElementById("demo-coin");
+  var balanceEl = document.getElementById("demo-balance");
+  var resultEl = document.getElementById("demo-result");
+  var lockText = document.getElementById("demo-lock-text");
+  var lockClosed = document.getElementById("demo-lock-closed");
+  var lockOpen = document.getElementById("demo-lock-open");
+  var headsBtn = document.getElementById("demo-heads");
+  var tailsBtn = document.getElementById("demo-tails");
+  var resetBtn = document.getElementById("demo-reset");
+  var wagerEls = document.querySelectorAll(".wager-amt");
+  if (!coin) return;
+
+  var balance = 25;
+  var rotation = 0;
+  var busy = false;
+
+  function wager() { return Math.min(10, balance); }
+
+  function setLock(open, minutes) {
+    lockClosed.hidden = open;
+    lockOpen.hidden = !open;
+    lockText.textContent = open ? "Open " + minutes + " min" : "Locked";
+  }
+
+  function sync() {
+    balanceEl.textContent = balance;
+    wagerEls.forEach(function (el) { el.textContent = wager(); });
+    var out = balance <= 0;
+    var hadFocus = document.activeElement === headsBtn || document.activeElement === tailsBtn;
+    headsBtn.disabled = tailsBtn.disabled = out;
+    resetBtn.hidden = !out;
+    if (out && hadFocus) resetBtn.focus(); /* keep keyboard focus alive */
+  }
+
+  function flip(calledTails) {
+    if (busy || balance <= 0) return;
+    busy = true;
+    sync();
+    var stake = wager();
+    var landedTails = Math.random() < 0.5;
+    var won = landedTails === calledTails;
+    var side = landedTails ? "Tails" : "Heads";
+
+    var current = ((rotation % 360) + 360) % 360;
+    rotation += 1800 + (landedTails ? 180 : 0) - current;
+    coin.style.transform = "rotateY(" + rotation + "deg)";
+
+    var settled = false;
+    function settle() {
+      if (settled) return;
+      settled = true;
+      if (won) {
+        balance += stake;
+        setLock(true, stake);
+        resultEl.innerHTML = "<span class=\"good\">" + side + " — you called it.</span> +" + stake + " min won. The app unlocks for the time you won.";
+      } else {
+        balance -= stake;
+        setLock(false);
+        resultEl.textContent = side + ". You lose the " + stake + " — and the lock stays exactly as locked as it was. Worst case: nothing changes.";
+        if (balance <= 0) {
+          resultEl.textContent += " You’re out of minutes; in the app, your daily limit resets tomorrow.";
+        }
+      }
+      busy = false;
+      sync();
+    }
+
+    if (reduceMotion) {
+      settle();
+    } else {
+      coin.addEventListener("transitionend", settle, { once: true });
+      setTimeout(settle, 1700); /* fallback if transitionend never fires */
+    }
+  }
+
+  headsBtn.addEventListener("click", function () { flip(false); });
+  tailsBtn.addEventListener("click", function () { flip(true); });
+  resetBtn.addEventListener("click", function () {
+    balance = 25;
+    setLock(false);
+    resultEl.textContent = "Call the flip. Win, and the app unlocks with the minutes you won.";
+    sync();
+  });
+  sync();
+})();
+</script>
 </body>
 </html>
