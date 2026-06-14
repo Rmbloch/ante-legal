@@ -1073,3 +1073,7 @@ a { color: var(--glow); }
   .skip-link,
   .nav-links a { transition: none; }
 }
+
+[hidden] {
+  display: none !important;
+}

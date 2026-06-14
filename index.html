@@ -81,7 +81,7 @@
       <div class="hook-copy reveal">
         <span class="eyebrow">Why it works</span>
         <h2>Gambling, but productive.</h2>
-        <p class="kicker">Other screen-time apps just nag you. Ante makes you bet for it.</p>
+        <p class="kicker">Other screen-time apps just nag you. Ante let's you wager with it.</p>
         <p>Your daily minutes are your bankroll. As long as you have some left, you can wager them in a quick game. Win, and you have stretched your day a little longer. Lose, and you forfeit the minutes you put up, never more than that.</p>
         <p><strong style="color:var(--ink)">Hit zero, whether you scrolled through your minutes or bet them away, and the app locks for the rest of the day.</strong> There is no talking past it and no winning it back. It resets tomorrow, not a minute sooner.</p>
       </div>
@@ -95,9 +95,7 @@
           <div class="stat-box">
             <div class="num">
               <span class="locked-flag">
-                <svg id="demo-lock-closed" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
-                <svg id="demo-lock-open" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/></svg>
-                <span id="demo-lock-text">Open</span>
+                <span id="demo-lock-text">Unlocked</span>
               </span>
             </div>
             <div class="lbl">Tracked app</div>
@@ -374,8 +372,6 @@
   var balanceEl = document.getElementById("demo-balance");
   var resultEl = document.getElementById("demo-result");
   var lockText = document.getElementById("demo-lock-text");
-  var lockClosed = document.getElementById("demo-lock-closed");
-  var lockOpen = document.getElementById("demo-lock-open");
   var headsBtn = document.getElementById("demo-heads");
   var tailsBtn = document.getElementById("demo-tails");
   var resetBtn = document.getElementById("demo-reset");
@@ -391,9 +387,7 @@
 
   function renderLock() {
     var locked = balance <= 0;
-    lockClosed.hidden = !locked;
-    lockOpen.hidden = locked;
-    lockText.textContent = locked ? "Locked" : "Open";
+    lockText.textContent = locked ? "Locked" : "Unlocked";
   }
 
   function sync() {
