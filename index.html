@@ -21,6 +21,96 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://anteapp.me/#organization",
+      "name": "bearDevs",
+      "url": "https://anteapp.me/",
+      "email": "support@anteapp.me",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://anteapp.me/assets/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://anteapp.me/#website",
+      "url": "https://anteapp.me/",
+      "name": "Ante",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://anteapp.me/#organization" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://anteapp.me/#app",
+      "name": "Ante",
+      "operatingSystem": "iOS",
+      "applicationCategory": "UtilitiesApplication",
+      "description": "Set daily limits on the apps you overuse, then wager those minutes in quick on-device mini-games. Win to earn more time today; run out and the app locks until tomorrow.",
+      "url": "https://anteapp.me/",
+      "image": "https://anteapp.me/assets/og.png",
+      "publisher": { "@id": "https://anteapp.me/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://anteapp.me/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this real-money gambling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The games are simulated and play for your own screen-time minutes. No real money goes in, and nothing of monetary value comes out. Minutes can't be bought, sold, or cashed out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when I lose a wager?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You forfeit the minutes you put up, and nothing beyond that. If you still have minutes left, you can keep using the app or wager again. If that bet emptied your balance, the app locks for the rest of the day and resets tomorrow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you see my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Ante has no servers, no analytics, and no accounts. Everything stays on your device, and Apple's Screen Time framework only ever hands the app opaque tokens. The details are in our privacy policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it iPhone only?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Ante is built on Apple's Screen Time and Family Controls frameworks, so it's an iPhone app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is it rated 17+?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "App Store rules: any app with simulated gambling is rated 17+, even when no real money is involved. Ante's wagers are only ever your own minutes."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
