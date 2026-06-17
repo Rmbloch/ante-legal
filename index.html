@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ante: Turn your screen-time limits into a game</title>
-<meta name="description" content="Set a daily limit on the apps you overuse, then wager those minutes in quick games. Win and you get more time today, lose and the app locks sooner. Private, on-device, coming soon to iPhone.">
+<meta name="description" content="Set a daily limit on the apps you overuse, then wager those minutes in quick games. Win to earn more time, lose and the app locks. Private and on-device.">
 <link rel="canonical" href="https://anteapp.me/">
 <meta name="theme-color" content="#0A0926">
 <meta property="og:type" content="website">
@@ -13,11 +13,104 @@
 <meta property="og:description" content="Set a daily limit, then wager your minutes at the table. Win and the day is yours a little longer. Run out and the app locks. Private, on-device, coming soon to iPhone.">
 <meta property="og:url" content="https://anteapp.me/">
 <meta property="og:image" content="https://anteapp.me/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ante app icon beside the tagline: turn your screen-time limits into a game. Coming soon to iPhone.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/nunito-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://anteapp.me/#organization",
+      "name": "bearDevs",
+      "url": "https://anteapp.me/",
+      "email": "support@anteapp.me",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://anteapp.me/assets/apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://anteapp.me/#website",
+      "url": "https://anteapp.me/",
+      "name": "Ante",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://anteapp.me/#organization" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://anteapp.me/#app",
+      "name": "Ante",
+      "operatingSystem": "iOS",
+      "applicationCategory": "UtilitiesApplication",
+      "description": "Set daily limits on the apps you overuse, then wager those minutes in quick on-device mini-games. Win to earn more time today; run out and the app locks until tomorrow.",
+      "url": "https://anteapp.me/",
+      "image": "https://anteapp.me/assets/og.png",
+      "publisher": { "@id": "https://anteapp.me/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://anteapp.me/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this real-money gambling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The games are simulated and play for your own screen-time minutes. No real money goes in, and nothing of monetary value comes out. Minutes can't be bought, sold, or cashed out."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when I lose a wager?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You forfeit the minutes you put up, and nothing beyond that. If you still have minutes left, you can keep using the app or wager again. If that bet emptied your balance, the app locks for the rest of the day and resets tomorrow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you see my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Ante has no servers, no analytics, and no accounts. Everything stays on your device, and Apple's Screen Time framework only ever hands the app opaque tokens. The details are in our privacy policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it iPhone only?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Ante is built on Apple's Screen Time and Family Controls frameworks, so it's an iPhone app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is it rated 17+?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "App Store rules: any app with simulated gambling is rated 17+, even when no real money is involved. Ante's wagers are only ever your own minutes."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -70,7 +163,10 @@
         </ul>
       </div>
       <div class="hero-device device">
-        <img src="/assets/screens/hub.jpeg" alt="Ante's Hub screen: a wallet of remaining minutes, the day's tracked apps, and the tables where you wager time" width="1179" height="2556" fetchpriority="high">
+        <picture>
+          <source srcset="/assets/screens/hub.webp" type="image/webp">
+          <img src="/assets/screens/hub.jpeg" alt="Ante's Hub screen: a wallet of remaining minutes, the day's tracked apps, and the tables where you wager time" width="1179" height="2556" fetchpriority="high">
+        </picture>
       </div>
     </div>
   </section>
@@ -81,7 +177,7 @@
       <div class="hook-copy reveal">
         <span class="eyebrow">Why it works</span>
         <h2>Gambling, but productive.</h2>
-        <p class="kicker">Other screen-time apps just nag you. Ante let's you wager with it.</p>
+        <p class="kicker">Other screen-time apps just nag you. Ante lets you wager with it.</p>
         <p>Your daily minutes are your bankroll. As long as you have some left, you can wager them in a quick game. Win, and you have stretched your day a little longer. Lose, and you forfeit the minutes you put up, never more than that.</p>
         <p><strong style="color:var(--ink)">Hit zero, whether you scrolled through your minutes or bet them away, and the app locks for the rest of the day.</strong> There is no talking past it and no winning it back. It resets tomorrow, not a minute sooner.</p>
       </div>
@@ -156,7 +252,10 @@
             </div>
           </div>
           <div class="rank-device device">
-            <img src="/assets/screens/player-card.jpeg" alt="Ante's player card: rank badge, lifetime minutes won, and win streak" width="1179" height="2556" loading="lazy">
+            <picture>
+              <source srcset="/assets/screens/player-card.webp" type="image/webp">
+              <img src="/assets/screens/player-card.jpeg" alt="Ante's player card: rank badge, lifetime minutes won, and win streak" width="1179" height="2556" loading="lazy">
+            </picture>
           </div>
         </div>
         <div class="feature card reveal" style="--d:1">
@@ -193,7 +292,10 @@
         </ol>
       </div>
       <div class="how-device device reveal">
-        <img src="/assets/screens/dashboard.jpeg" alt="Ante's dashboard: today's usage per tracked app, time remaining, and limits" width="1179" height="2556" loading="lazy">
+        <picture>
+          <source srcset="/assets/screens/dashboard.webp" type="image/webp">
+          <img src="/assets/screens/dashboard.jpeg" alt="Ante's dashboard: today's usage per tracked app, time remaining, and limits" width="1179" height="2556" loading="lazy">
+        </picture>
       </div>
     </div>
   </section>
@@ -202,7 +304,10 @@
   <section class="section" id="games">
     <div class="wrap games-grid">
       <div class="games-device device reveal">
-        <img src="/assets/screens/game.jpeg" alt="Ante's Blackjack table: a hand in play with minutes wagered in the pot" width="1179" height="2556" loading="lazy">
+        <picture>
+          <source srcset="/assets/screens/game.webp" type="image/webp">
+          <img src="/assets/screens/game.jpeg" alt="Ante's Blackjack table: a hand in play with minutes wagered in the pot" width="1179" height="2556" loading="lazy">
+        </picture>
       </div>
       <div>
         <div class="section-intro reveal">
@@ -245,7 +350,7 @@
         <li class="card">No tracking</li>
         <li class="card">No account</li>
       </ul>
-      <p class="privacy-note">Apple’s Screen Time framework only ever hands Ante opaque tokens. Even your list of tracked apps is unreadable to us. Don’t take our word for it: <a href="/privacy">read the privacy policy</a>.</p>
+      <p class="privacy-note">Apple’s Screen Time framework only ever hands Ante opaque tokens. Even your list of tracked apps is unreadable to us. Don’t take our word for it: <a href="/privacy/">read the privacy policy</a>.</p>
     </div>
   </section>
 
@@ -290,7 +395,7 @@
   <!-- ============ FAQ ============ -->
   <section class="section" id="faq">
     <div class="wrap">
-      <div class="section-intro center reveal">
+      <div class="section-intro reveal">
         <span class="eyebrow">FAQ</span>
         <h2>Fair questions.</h2>
       </div>
@@ -305,7 +410,7 @@
         </details>
         <details class="card">
           <summary>Can you see my data?</summary>
-          <div class="answer"><p>No. Ante has no servers, no analytics, and no accounts. Everything stays on your device, and Apple’s Screen Time framework only ever hands the app opaque tokens. The details are in our <a href="/privacy">privacy policy</a>.</p></div>
+          <div class="answer"><p>No. Ante has no servers, no analytics, and no accounts. Everything stays on your device, and Apple’s Screen Time framework only ever hands the app opaque tokens. The details are in our <a href="/privacy/">privacy policy</a>.</p></div>
         </details>
         <details class="card">
           <summary>Is it iPhone only?</summary>
@@ -332,8 +437,8 @@
         <p class="tagline">Turn your screen-time limits into a game.</p>
       </div>
       <ul class="footer-links">
-        <li><a href="/privacy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
         <li><a href="mailto:support@anteapp.me">Support</a></li>
       </ul>
     </div>
