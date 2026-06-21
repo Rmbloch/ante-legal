@@ -620,7 +620,14 @@ a { color: var(--glow); }
 .hex--bronze { background: linear-gradient(160deg, #e2a877, #9c5f33); }
 .hex--silver { background: linear-gradient(160deg, #e8edf7, #97a2b8); }
 .hex--gold { background: linear-gradient(160deg, #f3cd7d, var(--gold-deep)); }
+.hex--platinum { background: linear-gradient(160deg, #e6fbf4, #93bdb6); }
 .hex--diamond { background: linear-gradient(160deg, #d8ecff, #7fb4e8); }
+/* Exotic elite tiers break the metal ramp */
+.hex--master { background: linear-gradient(160deg, #d9b8ff, #7a3fd0); }
+.hex--grandmaster { background: linear-gradient(160deg, #ffb0a6, #c0143c); }
+.hex--legend {
+  background: conic-gradient(from 210deg, #ffd6f5, #b8e1ff, #c4ffe0, #ffe9b8, #ffd6f5);
+}
 .rank-badge .hex span {
   width: 34px;
   height: 40px;
@@ -631,12 +638,29 @@ a { color: var(--glow); }
   color: var(--ink);
   font-size: 0.8125rem;
 }
+.rank-badge small {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--dim);
+  opacity: 0.8;
+}
+/* Exotic badges glow and carry a crown emblem instead of a letter */
+.rank-badge--exotic { color: var(--ink); }
+.rank-badge--exotic .hex {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28), 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+.hex--master span { color: #d9b8ff; }
+.hex--grandmaster span { color: #ff9d92; }
+.hex--legend span { color: #cfe8ff; }
+.hex--legend span svg { filter: drop-shadow(0 0 4px rgba(184, 225, 255, 0.6)); }
 .rank-device {
   width: min(210px, 60vw);
   margin: 0 auto;
+  align-self: end; /* bleed off the card's bottom edge, not float mid-card */
   border-radius: clamp(30px, 13.5%, 40px) clamp(30px, 13.5%, 40px) 0 0;
   border-bottom: none;
-  aspect-ratio: 1179 / 1700; /* cropped peek */
+  aspect-ratio: 1179 / 2150; /* tall cropped peek */
 }
 .rank-device img { object-position: top; border-radius: clamp(24px, 11%, 34px) clamp(24px, 11%, 34px) 0 0; }
 .feature--pro { padding: 28px 26px; }
