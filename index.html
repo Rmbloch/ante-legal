@@ -241,37 +241,78 @@
         </div>
         <div class="feature feature--wide feature--rank card reveal">
           <div class="rank-copy">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 5v10l-8 5-8-5V7z"/></svg></div>
             <h3>Climb from Bronze to Legend</h3>
-            <p>Every minute you ever win counts toward your lifetime rank: eight tiers, three divisions each (III&nbsp;→&nbsp;II&nbsp;→&nbsp;I). Push past the metals into the exotic elite ranks. The grind is the reward.</p>
-            <div class="rank-row">
-              <span class="rank-badge"><span class="hex hex--bronze"><span>B</span></span>Bronze<small>0 min</small></span>
-              <span class="rank-badge"><span class="hex hex--silver"><span>S</span></span>Silver<small>60 min</small></span>
-              <span class="rank-badge"><span class="hex hex--gold"><span>G</span></span>Gold<small>200 min</small></span>
-              <span class="rank-badge"><span class="hex hex--platinum"><span>P</span></span>Platinum<small>500 min</small></span>
-              <span class="rank-badge"><span class="hex hex--diamond"><span>D</span></span>Diamond<small>1,200 min</small></span>
-              <span class="rank-badge rank-badge--exotic"><span class="hex hex--master"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M5 16L3 6l5 4 4-6 4 6 5-4-2 10H5z"/></svg></span></span>Master<small>3,000 min</small></span>
-              <span class="rank-badge rank-badge--exotic"><span class="hex hex--grandmaster"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M5 16L3 6l5 4 4-6 4 6 5-4-2 10H5z"/></svg></span></span>Grandmaster<small>8,000 min</small></span>
-              <span class="rank-badge rank-badge--exotic"><span class="hex hex--legend"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M5 16L3 6l5 4 4-6 4 6 5-4-2 10H5z"/></svg></span></span>Legend<small>20,000 min</small></span>
+            <p>Every minute you ever win counts toward your lifetime rank — eight tiers of a lifelong climb. Grind up through the metals, then break past them into the exotic elite. The grind is the reward.</p>
+            <div class="rank-divisions">
+              <span class="rank-divisions-hexes" aria-hidden="true">
+                <span class="div-hex"><span>III</span></span>
+                <span class="div-arrow">→</span>
+                <span class="div-hex"><span>II</span></span>
+                <span class="div-arrow">→</span>
+                <span class="div-hex"><span>I</span></span>
+              </span>
+              <span class="div-caption">Three divisions inside every tier</span>
             </div>
           </div>
+          <ol class="rank-ladder" aria-label="Rank tiers from Bronze to Legend">
+            <li class="rung rung--metal" style="--i:0">
+              <span class="node"><span class="hex hex--bronze"><span aria-hidden="true">B</span></span></span>
+              <span class="rung-label"><span class="rung-name">Bronze</span><span class="rung-min">0 min</span></span>
+            </li>
+            <li class="rung rung--metal" style="--i:1">
+              <span class="node"><span class="hex hex--silver"><span aria-hidden="true">S</span></span></span>
+              <span class="rung-label"><span class="rung-name">Silver</span><span class="rung-min">60 min</span></span>
+            </li>
+            <li class="rung rung--metal" style="--i:2">
+              <span class="node"><span class="hex hex--gold"><span aria-hidden="true">G</span></span></span>
+              <span class="rung-label"><span class="rung-name">Gold</span><span class="rung-min">200 min</span></span>
+            </li>
+            <li class="rung rung--metal" style="--i:3">
+              <span class="node"><span class="hex hex--platinum"><span aria-hidden="true">P</span></span></span>
+              <span class="rung-label"><span class="rung-name">Platinum</span><span class="rung-min">500 min</span></span>
+            </li>
+            <li class="rung rung--metal" style="--i:4">
+              <span class="node"><span class="hex hex--diamond"><span aria-hidden="true">D</span></span></span>
+              <span class="rung-label"><span class="rung-name">Diamond</span><span class="rung-min">1,200 min</span></span>
+            </li>
+            <li class="rung-divider" aria-hidden="true"><span>Elite</span></li>
+            <li class="rung rung--exotic" style="--i:5">
+              <span class="node"><span class="hex hex--master"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M5 16L3 6l5 4 4-6 4 6 5-4-2 10H5z"/></svg></span></span></span>
+              <span class="rung-label"><span class="rung-name">Master</span><span class="rung-min">3,000 min</span></span>
+            </li>
+            <li class="rung rung--exotic" style="--i:6">
+              <span class="node"><span class="hex hex--grandmaster"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M5 16L3 6l5 4 4-6 4 6 5-4-2 10H5z"/></svg></span></span></span>
+              <span class="rung-label"><span class="rung-name">Grandmaster</span><span class="rung-min">8,000 min</span></span>
+            </li>
+            <li class="rung rung--exotic rung--legend" style="--i:7">
+              <span class="node"><span class="hex hex--legend"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M5 16L3 6l5 4 4-6 4 6 5-4-2 10H5z"/></svg></span></span></span>
+              <span class="rung-label"><span class="rung-name">Legend</span><span class="rung-min">20,000 min</span></span>
+            </li>
+          </ol>
           <div class="rank-device device">
+            <span class="rank-device-tag" aria-hidden="true">Your stats</span>
             <picture>
               <source srcset="/assets/screens/player-card.webp" type="image/webp">
               <img src="/assets/screens/player-card.jpeg" alt="Ante's player card: rank badge, lifetime minutes won, and win streak" width="1179" height="2556" loading="lazy">
             </picture>
           </div>
         </div>
-        <div class="feature card reveal" style="--d:1">
+        <div class="feature feature--private card reveal" style="--d:1">
           <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>Private by design</h3>
           <p>No account, no analytics, no servers. Your screen time never leaves your phone.</p>
+          <div class="private-device device">
+            <picture>
+              <source srcset="/assets/screens/profile.webp" type="image/webp">
+              <img src="/assets/screens/privacy.jpeg" alt="Ante's privacy settings: no account, no analytics, all data kept on-device" width="1179" height="2556" loading="lazy">
+            </picture>
+          </div>
         </div>
         <div class="feature feature--full feature--pro card card--gold reveal">
           <div class="pro-inner">
             <div>
               <h3>Ante Pro</h3>
-              <p>Track up to three apps, unlock every game, and get your full stats. Seven days free.</p>
+              <p>Track up to three apps, unlock all eight games, and get your full stats. Seven days free.</p>
             </div>
             <a class="btn btn--gold" href="#pricing">See pricing</a>
           </div>
@@ -320,21 +361,69 @@
           <p>Every wager is played in minutes of your own screen time. No real money in, none out, ever.</p>
         </div>
         <div class="game-cards">
-          <div class="game-card card reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg></div>
-            <div>
-              <h3>Coin Flip <span class="tier-tag">Free</span></h3>
-              <p>Call it in the air. Double your stake or lose it. Fifty-fifty, five seconds, all in.</p>
+          <p class="game-group-label reveal">In the free app</p>
+          <div class="game-grid">
+            <div class="game-card card reveal">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg></div>
+              <div>
+                <h3>Coin Flip</h3>
+                <p>Call it in the air. Double your stake or lose it, fifty-fifty.</p>
+              </div>
+            </div>
+            <div class="game-card card reveal" style="--d:1">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="3" width="11" height="18" rx="2"/><path d="M9.5 9.5 12 7l2.5 2.5"/><path d="M9.5 14.5 12 17l2.5-2.5"/></svg></div>
+              <div>
+                <h3>HiLo</h3>
+                <p>Higher or lower? Chain right calls to grow the pot, then cash out.</p>
+              </div>
             </div>
           </div>
-          <div class="game-card game-card--gold card card--gold reveal" style="--d:1">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6" width="10" height="14" rx="2" transform="rotate(-8 8.5 13)"/><rect x="10.5" y="4" width="10" height="14" rx="2" transform="rotate(8 15.5 11)"/></svg></div>
-            <div>
-              <h3>Blackjack <span class="tier-tag tier-tag--gold">Pro</span></h3>
-              <p>Hit, stand, double down. Beat the dealer to 21 and bank the pot in screen time.</p>
+          <p class="game-group-label game-group-label--gold reveal">With Ante Pro</p>
+          <div class="game-grid">
+            <div class="game-card game-card--gold card reveal">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6" width="10" height="14" rx="2" transform="rotate(-8 8.5 13)"/><rect x="10.5" y="4" width="10" height="14" rx="2" transform="rotate(8 15.5 11)"/></svg></div>
+              <div>
+                <h3>Blackjack</h3>
+                <p>Hit, stand, double down. Beat the dealer to 21 and bank the pot.</p>
+              </div>
+            </div>
+            <div class="game-card game-card--gold card reveal" style="--d:1">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><circle cx="9" cy="11" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1.1" fill="currentColor" stroke="none"/><circle cx="7" cy="15.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="12" cy="15.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="17" cy="15.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="9" cy="19.5" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="19.5" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+              <div>
+                <h3>Plinko</h3>
+                <p>Drop a chip and watch it bounce. The edges pay the big multipliers.</p>
+              </div>
+            </div>
+            <div class="game-card game-card--gold card reveal" style="--d:2">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="8" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="8" cy="16" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="16" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+              <div>
+                <h3>Dice</h3>
+                <p>Slide the target, roll the line. You set the odds and the payout.</p>
+              </div>
+            </div>
+            <div class="game-card game-card--gold card reveal" style="--d:3">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 7V4M12 17v3M17 12h3M7 12H4M15.5 8.5l2-2M8.5 8.5l-2-2M15.5 15.5l2 2M8.5 15.5l-2 2"/></svg></div>
+              <div>
+                <h3>Mines</h3>
+                <p>Clear safe tiles to grow the pot. One wrong tap and it’s gone.</p>
+              </div>
+            </div>
+            <div class="game-card game-card--gold card reveal" style="--d:4">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="15" r="5.5"/><path d="M13 11c.8-1.7 2.3-2.3 3.4-4.2"/><path d="M16.4 6.8l2.1-1M16.4 6.8l-.2-2.3"/></svg></div>
+              <div>
+                <h3>Bomb Run</h3>
+                <p>Push one step farther for a bigger multiplier. Get out before it blows.</p>
+              </div>
+            </div>
+            <div class="game-card game-card--gold card reveal" style="--d:5">
+              <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18l6.5-6.5 4 4L21 8"/><path d="M15 8h6v6"/></svg></div>
+              <div>
+                <h3>Crash</h3>
+                <p>The multiplier climbs until it doesn’t. Cash out before the crash.</p>
+              </div>
             </div>
           </div>
-          <p class="games-more reveal" style="--d:2">More games on the way.</p>
+          <p class="games-more reveal">More games on the way.</p>
         </div>
       </div>
     </div>
@@ -371,7 +460,7 @@
           <p class="plan-sub">Everything you need to call your first flip.</p>
           <ul>
             <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>1 tracked app</li>
-            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Coin Flip</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Coin Flip &amp; HiLo</li>
             <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Daily limits, locking &amp; wagers</li>
             <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Private &amp; on-device</li>
           </ul>
@@ -382,7 +471,7 @@
           <p class="plan-sub">The full casino, the full picture.</p>
           <ul>
             <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Up to 3 tracked apps</li>
-            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Every game, including Blackjack</li>
+            <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>All 8 games, Blackjack to Crash</li>
             <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Full stats &amp; history</li>
             <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4 10-10"/></svg>Supports a one-person indie studio</li>
           </ul>

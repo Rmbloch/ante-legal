@@ -585,84 +585,326 @@ a { color: var(--glow); }
 }
 .feature--wide { grid-column: span 2; }
 .feature--full { grid-column: 1 / -1; }
+/* ---- Rank card: a vertical "climb" ladder ----
+   Copy sits top-right, the tier ladder is the left spine, and the
+   player-card screenshot hangs off the bottom-right, bleeding off
+   the card edge. One glowing spine threads eight nodes that grow
+   and brighten from Bronze (grounded) up to a haloed Legend. */
 .feature--rank {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 24px;
-  align-items: center;
+  grid-template-columns: 190px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "ladder copy"
+    "ladder phone";
+  column-gap: 30px;
+  row-gap: 14px;
+  align-items: stretch;
   overflow: hidden;
   padding-bottom: 0;
 }
-.feature--rank .rank-copy { padding-bottom: 26px; }
-.rank-row {
+.rank-copy { grid-area: copy; }
+.rank-copy p { max-width: 48ch; }
+
+/* Divisions explainer — replaces the buried "(III → II → I)" prose */
+.rank-divisions {
   display: flex;
-  gap: 14px;
-  margin-top: 18px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
   flex-wrap: wrap;
 }
-.rank-badge {
-  display: flex;
-  flex-direction: column;
+.rank-divisions-hexes {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--dim);
+  gap: 5px;
 }
-.rank-badge .hex {
-  width: 44px;
-  height: 50px;
+.div-hex {
+  width: 24px;
+  height: 27px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: rgba(137, 171, 255, 0.34);
   display: grid;
   place-items: center;
 }
-.hex--bronze { background: linear-gradient(160deg, #e2a877, #9c5f33); }
-.hex--silver { background: linear-gradient(160deg, #e8edf7, #97a2b8); }
-.hex--gold { background: linear-gradient(160deg, #f3cd7d, var(--gold-deep)); }
-.hex--platinum { background: linear-gradient(160deg, #e6fbf4, #93bdb6); }
-.hex--diamond { background: linear-gradient(160deg, #d8ecff, #7fb4e8); }
-/* Exotic elite tiers break the metal ramp */
-.hex--master { background: linear-gradient(160deg, #d9b8ff, #7a3fd0); }
-.hex--grandmaster { background: linear-gradient(160deg, #ffb0a6, #c0143c); }
-.hex--legend {
-  background: conic-gradient(from 210deg, #ffd6f5, #b8e1ff, #c4ffe0, #ffe9b8, #ffd6f5);
-}
-.rank-badge .hex span {
-  width: 34px;
-  height: 40px;
+.div-hex span {
+  width: 19px;
+  height: 22px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background: var(--space-deep);
+  background: #0d0c2b;
+  display: grid;
+  place-items: center;
+  color: var(--glow);
+  font-size: 0.5625rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+.div-arrow { color: var(--dim); font-weight: 800; font-size: 0.8125rem; }
+.div-caption { font-size: 0.8125rem; color: var(--dim); }
+
+/* The ladder */
+.rank-ladder {
+  grid-area: ladder;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 6px 0 24px;
+  min-height: 470px;
+  display: flex;
+  flex-direction: column-reverse; /* Bronze grounded at the bottom */
+  justify-content: space-between;
+  gap: 4px;
+}
+/* The spine — brightens as it climbs (not clipped, so box-shadow glows) */
+.rank-ladder::before {
+  content: "";
+  position: absolute;
+  left: 28px; /* center of the 56px node slot */
+  top: 32px;
+  bottom: 42px;
+  width: 3px;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: linear-gradient(to top,
+    rgba(141, 155, 206, 0.30) 0%,
+    rgba(67, 104, 228, 0.70) 55%,
+    #89abff 74%,
+    #cfe0ff 100%);
+  box-shadow: 0 0 14px rgba(67, 104, 228, 0.45);
+  z-index: 0;
+}
+.rung {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.node {
+  flex: 0 0 56px;
+  display: grid;
+  place-items: center;
+}
+
+/* Hex nodes — size crescendo is a non-color hierarchy cue */
+.hex {
+  --gloss: radial-gradient(at 30% 24%, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0) 46%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: grid;
+  place-items: center;
+  transition: transform 0.18s ease-out, filter 0.18s ease-out;
+}
+.hex > span {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(180deg, #0e0d30, #06051a);
   display: grid;
   place-items: center;
   color: var(--ink);
-  font-size: 0.8125rem;
+  font-weight: 800;
 }
-.rank-badge small {
-  font-size: 0.625rem;
+.rung--metal .hex { width: 38px; height: 44px; }
+.rung--metal .hex > span { width: 32px; height: 38px; font-size: 0.75rem; }
+.rung--exotic .hex { width: 46px; height: 52px; }
+.rung--exotic .hex > span { width: 38px; height: 44px; }
+.rung--legend .hex { width: 54px; height: 62px; }
+.rung--legend .hex > span { width: 44px; height: 52px; }
+
+/* Per-tier material: 3-stop gradient (specular / body / shadow) + gloss.
+   --glow-c drives the hover/idle drop-shadow so one rule fits all. */
+.hex--bronze { background: var(--gloss), linear-gradient(155deg, #f2c49a 0%, #c98850 45%, #8a5228 100%); --glow-c: rgba(201, 136, 80, 0.5); }
+.hex--silver { background: var(--gloss), linear-gradient(155deg, #ffffff 0%, #becbe2 45%, #8593b3 100%); --glow-c: rgba(174, 189, 217, 0.5); }
+.hex--gold { background: var(--gloss), linear-gradient(155deg, #ffe1a0 0%, #e0ac54 45%, #a06f1e 100%); --glow-c: rgba(217, 166, 72, 0.5); }
+.hex--platinum { background: var(--gloss), linear-gradient(155deg, #eafffa 0%, #a9d8cc 45%, #6f9e94 100%); --glow-c: rgba(159, 208, 195, 0.5); }
+.hex--diamond { background: var(--gloss), linear-gradient(155deg, #eaf6ff 0%, #9cc8f2 45%, #5f93d4 100%); --glow-c: rgba(143, 192, 239, 0.5); }
+.hex--master { background: var(--gloss), linear-gradient(155deg, #e8ccff 0%, #a76bf0 45%, #6425c0 100%); --glow-c: rgba(167, 107, 240, 0.55); }
+.hex--grandmaster { background: var(--gloss), linear-gradient(155deg, #ffc3b8 0%, #f0566b 40%, #a80f38 100%); --glow-c: rgba(240, 86, 107, 0.55); }
+.hex--legend {
+  background: var(--gloss), conic-gradient(from 210deg, #ffd9f2, #a8dbff, #b6ffdd, #ffedbf, #ffd9f2);
+  --glow-c: rgba(184, 225, 255, 0.5);
+}
+
+/* Glow: drop-shadow traces the clipped hex silhouette (box-shadow would
+   get clipped away — the old exotic box-shadow rendered nothing). */
+.rung--metal .hex { filter: drop-shadow(0 2px 6px rgba(4, 4, 20, 0.45)); }
+.rung--exotic .hex { filter: drop-shadow(0 0 10px var(--glow-c)) drop-shadow(0 4px 14px rgba(4, 4, 20, 0.5)); }
+
+/* Exotic crowns keep their per-tier tint */
+.hex--master > span { color: #d9b8ff; }
+.hex--grandmaster > span { color: #ff9d92; }
+.hex--legend > span { color: #cfe8ff; }
+.hex--legend > span svg { filter: drop-shadow(0 0 4px rgba(184, 225, 255, 0.6)); }
+
+/* Labels */
+.rung-label {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.15;
+}
+.rung-name {
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--body);
+  transition: color 0.18s ease-out;
+}
+.rung--exotic .rung-name { color: var(--ink); }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .rung--legend .rung-name {
+    background: linear-gradient(90deg, #cfe0ff, #d9b8ff 55%, #ffd9f2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+.rung-min {
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0;
   color: var(--dim);
-  opacity: 0.8;
+  font-variant-numeric: tabular-nums;
 }
-/* Exotic badges glow and carry a crown emblem instead of a letter */
-.rank-badge--exotic { color: var(--ink); }
-.rank-badge--exotic .hex {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28), 0 4px 16px rgba(0, 0, 0, 0.35);
+
+/* "ELITE" break — where the metals give way to the exotic tiers */
+.rung-divider {
+  position: relative;
+  z-index: 1;
+  height: 20px;
+  margin: 2px 0;
 }
-.hex--master span { color: #d9b8ff; }
-.hex--grandmaster span { color: #ff9d92; }
-.hex--legend span { color: #cfe8ff; }
-.hex--legend span svg { filter: drop-shadow(0 0 4px rgba(184, 225, 255, 0.6)); }
+.rung-divider span {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(137, 171, 255, 0.4);
+  background: rgba(10, 9, 38, 0.92);
+  color: var(--glow);
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Legend summit — soft halo + a few earned stars */
+.rung--legend::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  width: 130px;
+  height: 130px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(184, 225, 255, 0.16), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+.rung--legend::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    -34px -20px 0 0 rgba(255, 255, 255, 0.9),
+    28px -26px 0 -0.5px rgba(184, 225, 255, 0.9),
+    40px 12px 0 -0.5px rgba(255, 255, 255, 0.8),
+    -30px 24px 0 0 rgba(216, 236, 255, 0.8),
+    16px 30px 0 -0.5px rgba(255, 255, 255, 0.7);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hover — rungs are ambient, not interactive (no cursor/tabindex) */
+@media (hover: hover) and (pointer: fine) {
+  .rung:hover .hex {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 6px 14px var(--glow-c));
+  }
+  .rung:hover .rung-name { color: var(--ink); }
+}
+
+/* The player card — grounded at the card's bottom edge, bleeding off it */
 .rank-device {
-  width: min(210px, 60vw);
+  grid-area: phone;
+  width: min(232px, 60vw);
   margin: 0 auto;
-  align-self: end; /* bleed off the card's bottom edge, not float mid-card */
+  align-self: end;
+  justify-self: center;
   border-radius: clamp(30px, 13.5%, 40px) clamp(30px, 13.5%, 40px) 0 0;
   border-bottom: none;
-  aspect-ratio: 1179 / 2150; /* tall cropped peek */
+  aspect-ratio: 1179 / 1720; /* cropped peek: shows the whole player card */
 }
 .rank-device img { object-position: top; border-radius: clamp(24px, 11%, 34px) clamp(24px, 11%, 34px) 0 0; }
+/* Pill bridging the ladder to the screenshot */
+.rank-device-tag {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(137, 171, 255, 0.4);
+  background: rgba(10, 9, 38, 0.9);
+  color: var(--glow);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(4, 4, 20, 0.5);
+}
+
+/* ---- Private card: copy on top, a screenshot bleeding off the bottom,
+   filling the height the tall rank card lends this grid row ---- */
+.feature--private {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.private-device {
+  width: min(212px, 72%);
+  margin-top: auto; /* push to the bottom, bleeding off the card edge */
+  align-self: center;
+  border-radius: clamp(28px, 13%, 38px) clamp(28px, 13%, 38px) 0 0;
+  border-bottom: none;
+  aspect-ratio: 1179 / 1500; /* tall cropped peek */
+}
+.private-device img { object-position: top; border-radius: clamp(22px, 10.5%, 32px) clamp(22px, 10.5%, 32px) 0 0; }
+
+/* Scroll-in choreography: spine draws upward, rungs pop bottom-to-top,
+   the summit lights up last. Guarded by .js; killed for reduced motion. */
+.js .feature--rank .rank-ladder::before {
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.8s ease-out 0.25s;
+}
+.js .feature--rank.in .rank-ladder::before { transform: translateX(-50%) scaleY(1); }
+.js .feature--rank .rung,
+.js .feature--rank .rung-divider {
+  opacity: 0;
+  transform: translateY(10px) scale(0.85);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+  transition-delay: calc(300ms + var(--i, 5) * 80ms);
+}
+.js .feature--rank.in .rung,
+.js .feature--rank.in .rung-divider {
+  opacity: 1;
+  transform: none;
+}
+.js .feature--rank .rung--legend::before,
+.js .feature--rank .rung--legend::after {
+  opacity: 0;
+  transition: opacity 0.6s ease-out 1s;
+}
+.js .feature--rank.in .rung--legend::before,
+.js .feature--rank.in .rung--legend::after { opacity: 1; }
 .feature--pro { padding: 28px 26px; }
 .feature--pro .pro-inner {
   display: flex;
@@ -685,12 +927,33 @@ a { color: var(--glow); }
 .btn--gold:hover { box-shadow: 0 10px 28px rgba(233, 180, 76, 0.5); }
 @media (max-width: 880px) {
   .features-grid { grid-template-columns: 1fr 1fr; }
-  .feature--rank { grid-template-columns: 1fr; padding-bottom: 0; }
+  /* Copy moves full-width on top; ladder + phone rise side by side below */
+  .feature--rank {
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    grid-template-areas:
+      "copy   copy"
+      "ladder phone";
+    padding-bottom: 0;
+  }
   .feature--wide { grid-column: span 2; }
 }
 @media (max-width: 560px) {
   .features-grid { grid-template-columns: 1fr; }
   .feature--wide { grid-column: auto; }
+  /* Single column: copy, then the ladder, then the player card */
+  .feature--rank {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "ladder"
+      "phone";
+  }
+  .rank-ladder {
+    min-height: 0;
+    justify-content: flex-start;
+    gap: clamp(8px, 2.4vw, 14px);
+  }
+  .rank-device { width: min(200px, 62vw); justify-self: center; margin: 0 auto; }
 }
 
 /* ================================================================
@@ -753,20 +1016,45 @@ a { color: var(--glow); }
   gap: clamp(40px, 6vw, 80px);
   align-items: center;
 }
-.game-cards { display: grid; gap: 18px; }
+.game-cards { display: grid; gap: 14px; }
+.game-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.game-group-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--glow);
+}
+.game-group-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(137, 171, 255, 0.4), transparent);
+}
+.game-group-label--gold { color: var(--gold); }
+.game-group-label--gold::after { background: linear-gradient(90deg, rgba(233, 180, 76, 0.45), transparent); }
+.game-grid + .game-group-label { margin-top: 14px; }
 .game-card {
-  padding: 26px 26px;
+  padding: 18px 20px;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 20px;
+  gap: 14px;
   align-items: start;
 }
 .game-card .icon {
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
+  border-radius: 12px;
   background: rgba(137, 171, 255, 0.12);
   border: 1px solid rgba(137, 171, 255, 0.25);
   color: var(--glow);
@@ -777,28 +1065,10 @@ a { color: var(--glow); }
   color: var(--gold);
 }
 .game-card h3 {
-  font-size: 1.1875rem;
+  font-size: 1.0625rem;
   font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
 }
-.game-card p { margin: 6px 0 0; font-size: 0.9688rem; }
-.tier-tag {
-  font-size: 0.6875rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(137, 171, 255, 0.45);
-  color: var(--glow);
-}
-.tier-tag--gold {
-  border-color: rgba(233, 180, 76, 0.55);
-  color: var(--gold);
-}
+.game-card p { margin: 4px 0 0; font-size: 0.875rem; }
 .games-more {
   margin: 4px 0 0;
   font-size: 0.9375rem;
@@ -809,6 +1079,9 @@ a { color: var(--glow); }
 @media (max-width: 880px) {
   .games-grid { grid-template-columns: 1fr; }
   .games-device { order: 2; }
+}
+@media (max-width: 560px) {
+  .game-grid { grid-template-columns: 1fr; }
 }
 
 /* ================================================================
@@ -1094,6 +1367,22 @@ a { color: var(--glow); }
     transform: none;
     transition: none;
   }
+  /* Rank ladder: show the finished state, no draw/pop/sheen.
+     Legend halo/stars keep their centering transform — only opacity resets. */
+  .js .feature--rank .rank-ladder::before { transform: translateX(-50%) scaleY(1); transition: none; }
+  .js .feature--rank .rung,
+  .js .feature--rank .rung-divider {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .js .feature--rank .rung--legend::before,
+  .js .feature--rank .rung--legend::after {
+    opacity: 1;
+    transition: none;
+  }
+  .hex { transition: none; }
+  .rung:hover .hex { transform: none; }
   .btn,
   .skip-link,
   .nav-links a { transition: none; }
